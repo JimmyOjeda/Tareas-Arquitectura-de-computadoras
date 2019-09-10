@@ -88,7 +88,7 @@ char* decimalToAnyBase(int numeroEntrada, int baseAConvertir, char numeros[]){ /
 	}
 
 	for(i=longitud;i>=0;i--){ //Invertir el arreglo
-		*(resultado + (longitud-i)) = res_aux[i];
+		*(resultado + (longitud-i)) = res_aux[i-1];
 	}
 	 return resultado;
 }
