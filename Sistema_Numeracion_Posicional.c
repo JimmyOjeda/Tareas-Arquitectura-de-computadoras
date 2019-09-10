@@ -10,13 +10,13 @@ char* decimalToAnyBase(int numeroEntrada, int baseAConvertir, char numeros[]);
 int main(int argc, char *argv[]) {
 	char numeros[16]= {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 	int base;
-	int res = 0;
+	int res = 1;
 	char numeroEntrada[20];
 	int nuevoDecimal;
 	int baseAConvertir;
 	char* resultado;
 
-	while(res!=2){
+	while(res==1){
 		printf("------CONVERTIDOR DE NUMEROS------\n");
 		printf("Ingresa el numero: ");
 		scanf("%s",numeroEntrada);
@@ -25,10 +25,14 @@ int main(int argc, char *argv[]) {
 		printf("Ingrese en que base desea convertirlo: ");
 		scanf("%d", &baseAConvertir);
 
-		nuevoDecimal=toDecimal(numeroEntrada,base,numeros);
-		resultado = decimalToAnyBase(nuevoDecimal,baseAConvertir,numeros);
+		if (base>0 && base<=16 && baseAConvertir>0 && baseAConvertir<=16){
+			nuevoDecimal=toDecimal(numeroEntrada,base,numeros);
+			resultado = decimalToAnyBase(nuevoDecimal,baseAConvertir,numeros);
+			printf("El numero %s base %d es: %s \n", numeroEntrada, baseAConvertir, resultado);
+		}else {
+			printf("Ingresa una base valida\n");
+		}
 
-		printf("El numero %s base %d es %s: \n", numeroEntrada, baseAConvertir, resultado);
 		printf("1.Continuar -- 2.Salir \n");
 		scanf("%d",&res);
 	}
@@ -77,7 +81,7 @@ int validar(int k,int baseDeSistema){
 //Convertir de decimal a cualquier base
 char* decimalToAnyBase(int numeroEntrada, int baseAConvertir, char numeros[]){ //Se ingresa número decimal y la base a la que se desea convertir
 	char res_aux[100];
-	char temp;
+	char temp;	
 	char aux_resultado[100];
 	char *resultado = &aux_resultado[0];
 	int longitud = 0, residuo = 0, i;
