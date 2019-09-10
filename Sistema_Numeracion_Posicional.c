@@ -20,9 +20,9 @@ int main(int argc, char *argv[]) {
 		printf("------CONVERTIDOR DE NUMEROS------\n");
 		printf("Ingresa el numero: ");
 		scanf("%s",numeroEntrada);
-		printf("Ingresa la base del numero: ");
+		printf("Ingresa la base (de 2 a 16) del numero: ");
 		scanf("%d",&base);
-		printf("Ingrese en que base desea convertirlo: ");
+		printf("Ingrese en que base (de 2 a 16)desea convertirlo: ");
 		scanf("%d", &baseAConvertir);
 
 		if (base>0 && base<=16 && baseAConvertir>0 && baseAConvertir<=16){
