@@ -55,6 +55,7 @@ int toDecimal (char numeroDeOtroSistema[],int baseDeSistema,char numeros[]){
 	return sumatoria;
 }
 
+//Funcion para convertir de un char a un entero
 int convertirCharANumero(char caracter,char numeros[]){
 	int k;
 	for (k=0;numeros[k]!=caracter;k++){
@@ -63,6 +64,7 @@ int convertirCharANumero(char caracter,char numeros[]){
 	return k;
 }
 
+//Funcion para validar
 int validar(int k,int baseDeSistema){
 	int flag=0;
 	if (k<0 || k>=baseDeSistema){
