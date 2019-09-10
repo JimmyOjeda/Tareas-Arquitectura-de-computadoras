@@ -73,6 +73,7 @@ int validar(int k,int baseDeSistema){
 }
 
 //Convertir de decimal a cualquier base
+<<<<<<< HEAD
 char* decimalToAnyBase(int numeroEntrada, int baseAConvertir, char numeros[]){ //Se ingresa número decimal y la base a la que se desea convertir
 	char res_aux[100];
 	char temp;
@@ -91,4 +92,18 @@ char* decimalToAnyBase(int numeroEntrada, int baseAConvertir, char numeros[]){ /
 		*(resultado + (longitud-i)) = res_aux[i];
 	}
 	 return resultado;
+=======
+int decimalToAnyBase(char numeroDecimal[], int baseDeSistema){ //Se ingresa número decimal y la base a la que se desea convertir
+	for (int i=0;numeroDecimal[i]!='\0';i++){
+		//Detecta el largo de la cadena y lo guarda en i
+	}
+	i--; //Se le resta 1 a i para ajustar la cadena
+	for(int j=0; numeroEntrada==0; j++){	//Ciclo que itera hasta que una división dé como resultado 0 (fin de las divisiones) 
+		char residuos[i]; //se crea el array con el largo de la cadenan (*no sé si es char o int ya que ahí guardará números)
+		residuos[j] = numeroEntrada%baseDeSistema //guarda el residuo de cada division en una cadena
+		numeroEntrada = numeroEntrada/baseDeSistema; //El resultado de la división se vuelve a dividir por la base cada que itera el ciclo
+	}
+	for(int k=i; k=0; k--){	//Ciclo que va disminuyendo hasta llegar al largo de la cadena (i=largo de la cadena)
+		printf(residuos[k] + " "); //Se imprime cada residuo en orden inverso con un espacio para distinguir cada dígito
+>>>>>>> 1b4ae39bcadc06b087fc11c8d9e1f9e3d05a242c
 }
